@@ -17,5 +17,6 @@ package-lock.json export-ignore
 phpcs-wp.xml export-ignore
 phpcs.xml export-ignore
 phpcs.xml.dist export-ignore
+plugins/builder.php export-ignore
 README.md export-ignore
 screenshot.jpg export-ignore
