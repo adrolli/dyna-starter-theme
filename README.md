@@ -14,7 +14,7 @@ The official website and demo is available at https://dyna.press.
 
 <hr/>
 <p align="center">
-Copyright 2018 - Dyna Theme Framework - All rights reserved
+Copyright 2018 Dyna Theme Framework
 <br/>
 <br/>
 <a href="http://dyna.press">
