@@ -41,4 +41,4 @@ function dyna_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'dyna_wpcom_setup' );
+add_action( 'after_setup_theme', '\Dyna\dyna_wpcom_setup' );

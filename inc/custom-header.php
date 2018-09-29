@@ -29,7 +29,7 @@ namespace Dyna;
  *
  */
 function dyna_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'dyna_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( '\Dyna\dyna_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,

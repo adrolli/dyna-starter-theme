@@ -34,7 +34,7 @@ function dyna_woocommerce_setup() {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 }
-add_action( 'after_setup_theme', 'dyna_woocommerce_setup' );
+add_action( 'after_setup_theme', '\Dyna\dyna_woocommerce_setup' );
 
 /**
  * WooCommerce specific scripts & stylesheets.
@@ -60,7 +60,7 @@ function dyna_woocommerce_scripts() {
 
 	wp_add_inline_style( 'dyna-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'dyna_woocommerce_scripts' );
+add_action( 'wp_enqueue_scripts', '\Dyna\dyna_woocommerce_scripts' );
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -85,7 +85,7 @@ function dyna_woocommerce_active_body_class( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'dyna_woocommerce_active_body_class' );
+add_filter( 'body_class', '\Dyna\dyna_woocommerce_active_body_class' );
 
 /**
  * Products per page.
@@ -97,7 +97,7 @@ add_filter( 'body_class', 'dyna_woocommerce_active_body_class' );
 function dyna_woocommerce_products_per_page() {
 	return 12;
 }
-add_filter( 'loop_shop_per_page', 'dyna_woocommerce_products_per_page' );
+add_filter( 'loop_shop_per_page', '\Dyna\dyna_woocommerce_products_per_page' );
 
 /**
  * Product gallery thumnbail columns.
@@ -109,7 +109,7 @@ add_filter( 'loop_shop_per_page', 'dyna_woocommerce_products_per_page' );
 function dyna_woocommerce_thumbnail_columns() {
 	return 4;
 }
-add_filter( 'woocommerce_product_thumbnails_columns', 'dyna_woocommerce_thumbnail_columns' );
+add_filter( 'woocommerce_product_thumbnails_columns', '\Dyna\dyna_woocommerce_thumbnail_columns' );
 
 /**
  * Default loop columns on product archives.
@@ -121,7 +121,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'dyna_woocommerce_thumbnai
 function dyna_woocommerce_loop_columns() {
 	return 3;
 }
-add_filter( 'loop_shop_columns', 'dyna_woocommerce_loop_columns' );
+add_filter( 'loop_shop_columns', '\Dyna\dyna_woocommerce_loop_columns' );
 
 /**
  * Related Products Args.
@@ -141,7 +141,7 @@ function dyna_woocommerce_related_products_args( $args ) {
 
 	return $args;
 }
-add_filter( 'woocommerce_output_related_products_args', 'dyna_woocommerce_related_products_args' );
+add_filter( 'woocommerce_output_related_products_args', '\Dyna\dyna_woocommerce_related_products_args' );
 
 if ( ! function_exists( 'dyna_woocommerce_product_columns_wrapper' ) ) {
 	/**
@@ -156,7 +156,7 @@ if ( ! function_exists( 'dyna_woocommerce_product_columns_wrapper' ) ) {
 		echo '<div class="columns-' . absint( $columns ) . '">';
 	}
 }
-add_action( 'woocommerce_before_shop_loop', 'dyna_woocommerce_product_columns_wrapper', 40 );
+add_action( 'woocommerce_before_shop_loop', '\Dyna\dyna_woocommerce_product_columns_wrapper', 40 );
 
 if ( ! function_exists( 'dyna_woocommerce_product_columns_wrapper_close' ) ) {
 	/**
@@ -170,7 +170,7 @@ if ( ! function_exists( 'dyna_woocommerce_product_columns_wrapper_close' ) ) {
 		echo '</div>';
 	}
 }
-add_action( 'woocommerce_after_shop_loop', 'dyna_woocommerce_product_columns_wrapper_close', 40 );
+add_action( 'woocommerce_after_shop_loop', '\Dyna\dyna_woocommerce_product_columns_wrapper_close', 40 );
 
 /**
  * Remove default WooCommerce wrapper.
@@ -195,7 +195,7 @@ if ( ! function_exists( 'dyna_woocommerce_wrapper_before' ) ) {
 			<?php
 	}
 }
-add_action( 'woocommerce_before_main_content', 'dyna_woocommerce_wrapper_before' );
+add_action( 'woocommerce_before_main_content', '\Dyna\dyna_woocommerce_wrapper_before' );
 
 if ( ! function_exists( 'dyna_woocommerce_wrapper_after' ) ) {
 	/**
@@ -214,7 +214,7 @@ if ( ! function_exists( 'dyna_woocommerce_wrapper_after' ) ) {
 		<?php
 	}
 }
-add_action( 'woocommerce_after_main_content', 'dyna_woocommerce_wrapper_after' );
+add_action( 'woocommerce_after_main_content', '\Dyna\dyna_woocommerce_wrapper_after' );
 
 /**
  * Sample implementation of the WooCommerce Mini Cart.
@@ -247,7 +247,7 @@ if ( ! function_exists( 'dyna_woocommerce_cart_link_fragment' ) ) {
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'dyna_woocommerce_cart_link_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', '\Dyna\dyna_woocommerce_cart_link_fragment' );
 
 if ( ! function_exists( 'dyna_woocommerce_cart_link' ) ) {
 	/**

@@ -39,7 +39,7 @@ function dyna_customize_register( $wp_customize ) {
 		) );
 	}
 }
-add_action( 'customize_register', 'dyna_customize_register' );
+add_action( 'customize_register', '\Dyna\dyna_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
@@ -71,4 +71,4 @@ function dyna_customize_partial_blogdescription() {
 function dyna_customize_preview_js() {
 	wp_enqueue_script( 'dyna-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'dyna_customize_preview_js' );
+add_action( 'customize_preview_init', '\Dyna\dyna_customize_preview_js' );

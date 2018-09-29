@@ -56,7 +56,7 @@ function dyna_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'dyna_jetpack_setup' );
+add_action( 'after_setup_theme', '\Dyna\dyna_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
