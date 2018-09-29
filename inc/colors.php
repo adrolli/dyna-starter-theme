@@ -13,10 +13,10 @@
  * @license GNU GPL V2 - https://www.gnu.org/licenses/gpl
  *
  * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/
+ * @link https://codex.wordpress.org/Class_Reference/WP_Customize_Color_Control
  *
  */
 
 namespace Dyna;
 
 // This is the next todo
-

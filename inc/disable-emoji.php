@@ -27,7 +27,7 @@ namespace Dyna;
  * @since 0.0.8
  *
  */
-function disable_wp_emoji() {
+function dyna_disable_wp_emoji() {
 
   // all actions related to emojis
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
@@ -39,12 +39,12 @@ function disable_wp_emoji() {
   remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
   // filter to remove TinyMCE emojis
-  add_filter( 'tiny_mce_plugins', 'disable_emoji_tinymce' );
+  add_filter( 'tiny_mce_plugins', '\Dyna\dyna_disable_emoji_tinymce' );
   
   // filter to remove DNS prefetch
   add_filter( 'emoji_svg_url', '__return_false' );
 }
-add_action( 'init', 'disable_wp_emoji' );
+add_action( 'init', '\Dyna\dyna_disable_wp_emoji' );
 
 /**
  *
@@ -56,7 +56,7 @@ add_action( 'init', 'disable_wp_emoji' );
  * @return array
  *
  */
-function disable_emoji_tinymce( $plugins ) {
+function dyna_disable_emoji_tinymce( $plugins ) {
   if ( is_array( $plugins ) ) {
     return array_diff( $plugins, array( 'wpemoji' ) );
   } else {

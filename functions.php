@@ -9,7 +9,7 @@
  * Dyna removes the Emoji Support in favor of page speed. If you want to get the styled
  * Emojis back, just comment this out as follows:
  *
-   // require_once(get_template_directory().'/functions/disable-emoji.php');
+// require_once(get_template_directory().'/functions/disable-emoji.php');
  *
  * If you are really sure to not want this in your theme, you can also delete the line
  * including comment and delete the file /functions/disable-emoji.php afterwards.
@@ -214,10 +214,10 @@ add_action( 'widgets_init', 'dyna_widgets_init' );
  */
 function dyna_scripts() {
 
-    wp_enqueue_style( 'dyna-styles', get_stylesheet_uri() );
-    wp_enqueue_style( 'themeblocks-style', get_template_directory_uri() . '/css/blocks.css' );
-    wp_enqueue_style( 'theme-fonts', dyna_fonts_url() );
-    wp_enqueue_script( 'dyna-scripts', get_template_directory_uri() . '/js/navigation.js', array(), '20180720', true );
+	wp_enqueue_style( 'dyna-styles', get_stylesheet_uri() );
+	wp_enqueue_style( 'themeblocks-style', get_template_directory_uri() . '/css/blocks.css' );
+	wp_enqueue_style( 'theme-fonts', dyna_fonts_url() );
+	wp_enqueue_script( 'dyna-scripts', get_template_directory_uri() . '/js/navigation.js', array(), '20180720', true );
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20180720', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -262,10 +262,16 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 /**
  * Including more colors in Customizer.
+ *
+ * @since 0.0.9
+ * @link https://codex.wordpress.org/Class_Reference/WP_Customize_Color_Control
  */
 require get_template_directory() . '/inc/colors.php';
 
 /**
  * Remove Emoji Support
+ *
+ * @since 0.0.8
+ * @link https://kinsta.com/knowledgebase/disable-emojis-wordpress/
  */
-require_once(get_template_directory().'/inc/disable-emoji.php');
+require get_template_directory() . '/inc/disable-emoji.php';

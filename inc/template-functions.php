@@ -53,4 +53,4 @@ function dyna_pingback_header() {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'dyna_pingback_header' );
+add_action( 'wp_head', '\Dyna\dyna_pingback_header' );

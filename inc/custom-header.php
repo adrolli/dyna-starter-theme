@@ -35,10 +35,10 @@ function dyna_custom_header_setup() {
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'dyna_header_style',
+		'wp-head-callback'       => '\Dyna\dyna_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'dyna_custom_header_setup' );
+add_action( 'after_setup_theme', '\Dyna\dyna_custom_header_setup' );
 
 if ( ! function_exists( 'dyna_header_style' ) ) :
 	/**
