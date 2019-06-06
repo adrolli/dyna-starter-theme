@@ -1,24 +1,22 @@
 <?php
 /**
- * The header for the theme
+ * Header Partial
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">.
- * It also calls the wp_head() that loads all head-information needed by WordPress or loaded plugins.
+* @package Dyna
+ * @subpackage Dyna Starter Theme
+ * @version 1.0.0
+ * @author Alf Drollinger
+ * @copyright 2018 https://dyna.press
+ * @license GPL V2 https://www.gnu.org/licenses/gpl
  *
- * @package Dyna
- * @subpackage Header
- * @since 0.0.1
- * @version 0.0.8
- * @author Automattic Themeshaper Team
- * @author Alf Drollinger - alf@dyna.press
- * @copyright 2018 Dyna - https://dyna.press
- * @license GNU GPL V2 - https://www.gnu.org/licenses/gpl
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
+ * @link https://dyna.press/docs/template-partials/header
  */
 
 namespace Dyna;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly!
+}
 
 ?>
 
@@ -36,6 +34,16 @@ namespace Dyna;
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dyna' ); ?></a>
 		<header id="masthead" class="site-header">
+			<div class="top-navigation">
+			<?php
+					wp_nav_menu( array(
+						'theme_location' => 'page-menu',
+						'menu_id'        => 'page-menu',
+						'echo'           => true,
+						'fallback_cb'    => 'link_to_menu_editor',
+					) );
+				?>
+			</div><!-- .top-nav -->
 			<div class="site-branding">
 				<?php
 				the_custom_logo();
@@ -54,11 +62,12 @@ namespace Dyna;
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dyna' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'dyna' ); ?></button>
 				<?php
 					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
+						'theme_location' => 'main-menu',
+						'menu_id'        => 'main-menu',
+						'echo'           => true,
 					) );
 				?>
 			</nav><!-- #site-navigation -->

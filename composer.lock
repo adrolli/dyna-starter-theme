@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b2eb1b91abaab0d0cd07272c797f30b",
+    "content-hash": "dab43e7e83c9f7a7a7869fa43cbe6e2c",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -124,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2018-08-27T06:10:37+00:00"
         }
     ],
     "packages-dev": [
@@ -1809,16 +1809,16 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "06c0be4cdd8363f3ec8d592c9a4d1b981d5052af"
+                "reference": "fb3469266daaa67a1e6d42fc78fa6cdc254689f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/06c0be4cdd8363f3ec8d592c9a4d1b981d5052af",
-                "reference": "06c0be4cdd8363f3ec8d592c9a4d1b981d5052af",
+                "url": "https://api.github.com/repos/symfony/config/zipball/fb3469266daaa67a1e6d42fc78fa6cdc254689f6",
+                "reference": "fb3469266daaa67a1e6d42fc78fa6cdc254689f6",
                 "shasum": ""
             },
             "require": {
@@ -1862,20 +1862,20 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:13:39+00:00"
+            "time": "2018-09-08T12:44:02+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "0c1fcbb9afb5cff992c982ff99c0434f0146dcfc"
+                "reference": "aca0dcc0c75496e17e2aa0303bb9c8e6d79ed789"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/0c1fcbb9afb5cff992c982ff99c0434f0146dcfc",
-                "reference": "0c1fcbb9afb5cff992c982ff99c0434f0146dcfc",
+                "url": "https://api.github.com/repos/symfony/console/zipball/aca0dcc0c75496e17e2aa0303bb9c8e6d79ed789",
+                "reference": "aca0dcc0c75496e17e2aa0303bb9c8e6d79ed789",
                 "shasum": ""
             },
             "require": {
@@ -1923,7 +1923,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:13:39+00:00"
+            "time": "2018-09-30T03:33:07+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1984,7 +1984,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2093,16 +2093,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "f0de0b51913eb2caab7dfed6413b87e14fca780e"
+                "reference": "5ebb438d1aabe9dba93099dd06e0500f97817a6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/f0de0b51913eb2caab7dfed6413b87e14fca780e",
-                "reference": "f0de0b51913eb2caab7dfed6413b87e14fca780e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/5ebb438d1aabe9dba93099dd06e0500f97817a6e",
+                "reference": "5ebb438d1aabe9dba93099dd06e0500f97817a6e",
                 "shasum": ""
             },
             "require": {
@@ -2138,7 +2138,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:13:39+00:00"
+            "time": "2018-09-21T12:46:38+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2259,16 +2259,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "cc83afdb5ac99147806b3bb65a3ff1227664f596"
+                "reference": "f09e21b7c5aba06c47bbfad9cbcf13ac7f0db0a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/cc83afdb5ac99147806b3bb65a3ff1227664f596",
-                "reference": "cc83afdb5ac99147806b3bb65a3ff1227664f596",
+                "url": "https://api.github.com/repos/symfony/process/zipball/f09e21b7c5aba06c47bbfad9cbcf13ac7f0db0a6",
+                "reference": "f09e21b7c5aba06c47bbfad9cbcf13ac7f0db0a6",
                 "shasum": ""
             },
             "require": {
@@ -2304,11 +2304,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:13:39+00:00"
+            "time": "2018-09-06T17:11:15+00:00"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -2421,16 +2421,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v2.8.44",
+            "version": "v2.8.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "30352cf38e35ef34cf60676ee72ff3f84c551fac"
+                "reference": "d928358e4e67353784be1816d3830e7097d5cf56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/30352cf38e35ef34cf60676ee72ff3f84c551fac",
-                "reference": "30352cf38e35ef34cf60676ee72ff3f84c551fac",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/d928358e4e67353784be1816d3830e7097d5cf56",
+                "reference": "d928358e4e67353784be1816d3830e7097d5cf56",
                 "shasum": ""
             },
             "require": {
@@ -2491,7 +2491,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:13:39+00:00"
+            "time": "2018-09-25T08:06:01+00:00"
         },
         {
             "name": "twig/twig",
@@ -2558,50 +2558,6 @@
                 "templating"
             ],
             "time": "2018-07-13T07:12:17+00:00"
-        },
-        {
-            "name": "woocommerce/woocommerce",
-            "version": "3.4.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/woocommerce/woocommerce.git",
-                "reference": "322ba60a76a553e759c81ddc09a1b9efc1e6b4ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/woocommerce/woocommerce/zipball/322ba60a76a553e759c81ddc09a1b9efc1e6b4ef",
-                "reference": "322ba60a76a553e759c81ddc09a1b9efc1e6b4ef",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.2"
-            },
-            "require-dev": {
-                "apigen/apigen": "^4",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
-                "nette/utils": "~2.3.0",
-                "phpunit/phpunit": "6.*",
-                "squizlabs/php_codesniffer": "*",
-                "wimg/php-compatibility": "^8.0",
-                "woocommerce/woocommerce-git-hooks": "*",
-                "woocommerce/woocommerce-sniffs": "*",
-                "wp-coding-standards/wpcs": "^0.14"
-            },
-            "type": "wordpress-plugin",
-            "extra": {
-                "scripts-description": {
-                    "test": "Run unit tests",
-                    "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
-                    "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "An eCommerce toolkit that helps you sell anything. Beautifully.",
-            "homepage": "https://woocommerce.com/",
-            "time": "2018-07-25T18:00:37+00:00"
         },
         {
             "name": "zendframework/zend-cache",

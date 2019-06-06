@@ -1,29 +1,25 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * Main template (index.php)
  *
  * @package Dyna
- * @subpackage Templates
- * @since 0.0.1
- * @version 0.0.8
- * @author Automattic Themeshaper Team
- * @author Alf Drollinger - alf@dyna.press
- * @copyright 2018 Dyna - https://dyna.press
- * @license GNU GPL V2 - https://www.gnu.org/licenses/gpl
+ * @subpackage Dyna Starter Theme
+ * @version 1.0.0
+ * @author Alf Drollinger
+ * @copyright 2018 https://dyna.press
+ * @license GPL V2 https://www.gnu.org/licenses/gpl
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @link https://dyna.press/docs/default-templates/main-template
  */
 
 namespace Dyna;
 
-get_header();
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly!
+}
 
+// use default header
+get_header();
 ?>
 
 	<main id="primary" class="site-main">
@@ -39,15 +35,10 @@ get_header();
 		<?php
 		endif;
 
-		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
-			/*
-				* Include the Post-Format-specific template for the content.
-				* If you want to override this in a child theme, then include a file
-				* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				*/
-			get_template_part( 'template-parts/content', get_post_format() );
+			// Post-format-specific content partial
+			get_template_part( 'partials/content', get_post_format() );
 
 		endwhile;
 
@@ -55,11 +46,14 @@ get_header();
 
 	else :
 
-		get_template_part( 'template-parts/content', 'none' );
+		// No content found partial
+		get_template_part( 'partials/content', 'none' );
 
 	endif; ?>
 
 	</main><!-- #primary -->
 
 <?php
+
+// use default footer
 get_footer();

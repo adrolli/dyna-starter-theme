@@ -12,5 +12,8 @@
   "require-dev": {
     "phpdocumentor/phpdocumentor": "2.*",
     "johnpbloch/wordpress": "^4.9"
+  },
+  "extra": {
+    "wordpress-install-dir": "vendor/wordpress"
   }
 }

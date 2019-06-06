@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>Dyna</title>
+    <parser>
+        <target>api-docs</target>
+        <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+            <item>DISABLED</item>
+        </markers>
+    </parser>
+    <transformer>
+        <target>api-docs</target>
+    </transformer>
+    <files>
+        <directory>./</directory>
+        <ignore>vendor/</ignore>
+        <ignore>api-docs/</ignore>
+    </files>
+</phpdoc>

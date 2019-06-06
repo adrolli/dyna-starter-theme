@@ -1,277 +1,135 @@
 <?php
 /**
- * Dyna Functions
- *
- * Dyna functions and definitions calling all functions in the inc-directory but initially
- * based on the original _s Theme. It is very easy to disable a feature by commenting.
- *
- * Example:
- * Dyna removes the Emoji Support in favor of page speed. If you want to get the styled
- * Emojis back, just comment this out as follows:
- *
-// require_once(get_template_directory().'/functions/disable-emoji.php');
- *
- * If you are really sure to not want this in your theme, you can also delete the line
- * including comment and delete the file /functions/disable-emoji.php afterwards.
+ * Dyna Functions.
+ * 
+ * This file functions.php is an obligatory WordPress Theme file.
+ * It is used to write functions or (like we prefer) to include
+ * other functions from the /functions-directory.
  *
  * @package Dyna
- * @subpackage Functions
- * @since 0.0.1
- * @version 0.0.8
- * @author Automattic Themeshaper Team
- * @author Alf Drollinger - alf@dyna.press
- * @copyright 2018 Dyna - https://dyna.press
- * @license GNU GPL V2 - https://www.gnu.org/licenses/gpl
+ * @subpackage Dyna Starter Theme
+ * @version 1.0.0
+ * @author Alf Drollinger
+ * @copyright 2018 https://dyna.press
+ * @license GPL V2 https://www.gnu.org/licenses/gpl
  *
- * @link https://codex.wordpress.org/Functions_File_Explained
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
+ * @link https://dyna.press/docs/functions
  */
+
+Namespace Dyna;
+
+/**
+ * Exit if accessed directly!
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// Load Global Variables
+require get_template_directory() . '/theme-settings.php';
 
 if ( ! function_exists( 'dyna_setup' ) ) :
-	/**
-	 *
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 *
-	 * @since 0.0.1
-	 * @link https://developer.wordpress.org/themes/basics/theme-functions/#theme-setup
-	 *
-	 */
+        /**
+         * Dyna Setup
+         *
+         * @since 1.0.0
+         * @link https://dyna.press/docs/functions/theme-setup
+         */
 	function dyna_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on dyna, use a find and replace
-		 * to change 'dyna' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'dyna', get_template_directory() . '/languages' );
 
-		/*
-		 * Add default posts and comments RSS feed links to head.
-		 */
-		add_theme_support( 'automatic-feed-links' );
+                // Load Theme Translation
+                require get_template_directory() . '/functions/theme-translation.php';
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
+                // Load Automatic Feed Links
+                require get_template_directory() . '/functions/automatic-feed-links.php';
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+                // Load Title Tag Management
+                require get_template_directory() . '/functions/title-tag.php';
 
-		/*
-		 * This theme uses wp_nav_menu() in one location.
-		 */
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'dyna' ),
-		) );
+                // Load Featured Image
+                require get_template_directory() . '/functions/featured-image.php';
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+                // Load Navigation Menu
+                require get_template_directory() . '/functions/navigation-menus.php';
 
-		/*
-		 * Set up the WordPress core custom background feature.
-		 */
-		add_theme_support( 'custom-background', apply_filters( 'dyna_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+                // Load HTML5 Support
+                require get_template_directory() . '/functions/html5-support.php';
 
-		/*
-		 * Add theme support for selective refresh for widgets.
-		 */
-		add_theme_support( 'customize-selective-refresh-widgets' );
+                // Load Background Support
+                require get_template_directory() . '/functions/custom-background.php';
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+                // Load Refresh Widgets
+                require get_template_directory() . '/functions/refresh-widgets.php';
 
-		// Adding support for core block visual styles.
-		add_theme_support( 'wp-block-styles' );
+                // Load Custom Logo
+                require get_template_directory() . '/functions/custom-logo.php';
 
-		// Add support for full and wide align images.
-		add_theme_support( 'align-wide' );
+                // Load Gutenberg Features
+                require get_template_directory() . '/functions/gutenberg-features.php';
 
-		// Add support for custom color scheme.
-		add_theme_support( 'editor-color-palette', array(
-			array(
-				'name'  => esc_html__( 'Strong Blue', 'dyna' ),
-				'slug'  => 'strong-blue',
-				'color' => '#0073aa',
-			),
-			array(
-				'name'  => esc_html__( 'Lighter Blue', 'dyna' ),
-				'slug'  => 'lighter-blue',
-				'color' => '#229fd8',
-			),
-			array(
-				'name'  => esc_html__( 'Very Light Gray', 'dyna' ),
-				'slug'  => 'very-light-gray',
-				'color' => '#eee',
-			),
-			array(
-				'name'  => esc_html__( 'Very Dark Gray', 'dyna' ),
-				'slug'  => 'very-dark-gray',
-				'color' => '#444',
-			),
-		) );
+                // Load Gutenberg Colors
+                require get_template_directory() . '/functions/gutenberg-colors.php';
+
 	}
 endif;
-add_action( 'after_setup_theme', 'dyna_setup' );
+add_action( 'after_setup_theme', 'Dyna\dyna_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function dyna_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'dyna_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'dyna_content_width', 0 );
+// Load Content Width
+require get_template_directory() . '/functions/content-width.php';
 
-/**
- * Register Google Fonts
- */
-function dyna_fonts_url() {
-	$fonts_url = '';
+// Load Google Fonts
+//require get_template_directory() . '/functions/google-fonts.php';
 
-	/*
-	 *Translators: If there are characters in your language that are not
-	 * supported by Noto Serif, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'dyna' );
+// Load Widget Area
+require get_template_directory() . '/functions/widget-areas.php';
 
-	if ( 'off' !== $notoserif ) {
-		$font_families = array();
-		$font_families[] = 'Noto Serif:400,400italic,700,700italic';
+// Load Styles and Scripts
+require get_template_directory() . '/functions/styles-and-scripts.php';
 
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
+// Load Custom Header
+require get_template_directory() . '/functions/custom-header.php';
 
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
+// Load Template Tags
+require get_template_directory() . '/functions/template-tags.php';
 
-	return $fonts_url;
+// Load Template Functions
+require get_template_directory() . '/functions/template-functions.php';
 
-}
+//Load Customizer additions
+require get_template_directory() . '/functions/customizer.php';
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function dyna_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'dyna' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'dyna' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'dyna_widgets_init' );
-
-/**
- * Enqueue scripts and styles.
- */
-function dyna_scripts() {
-
-	wp_enqueue_style( 'dyna-styles', get_stylesheet_uri() );
-	wp_enqueue_style( 'themeblocks-style', get_template_directory_uri() . '/css/blocks.css' );
-	wp_enqueue_style( 'theme-fonts', dyna_fonts_url() );
-	wp_enqueue_script( 'dyna-scripts', get_template_directory_uri() . '/js/navigation.js', array(), '20180720', true );
-	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20180720', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'dyna_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
+// Load Jetpack compatibility
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+	require get_template_directory() . '/functions/jetpack.php';
 }
 
-/**
- * Load WooCommerce compatibility file.
- */
+// Load WooCommerce compatibility
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
+	require get_template_directory() . '/functions/woocommerce.php';
 }
 
-/**
- * Including more colors in Customizer.
- *
- * @since 0.0.9
- * @link https://codex.wordpress.org/Class_Reference/WP_Customize_Color_Control
- */
-require get_template_directory() . '/inc/colors.php';
+// Load Disable Emojis
+require get_template_directory() . '/functions/disable-emojis.php';
 
-/**
- * Remove Emoji Support
- *
- * @since 0.0.8
- * @link https://kinsta.com/knowledgebase/disable-emojis-wordpress/
- */
-require get_template_directory() . '/inc/disable-emoji.php';
+// Hide Archive Prefix
+require get_template_directory() . '/functions/hide-archive-prefix.php';
+
+// Load Gutenberg Blocks
+// TODO: require get_template_directory() . '/functions/gutenberg-blocks.php';
+
+// Load Header Settings
+// TODO: require get_template_directory() . '/functions/header-settings.php';
+
+// Load Footer Settings
+// TODO: require get_template_directory() . '/functions/footer-settings.php';
+
+// Load Page Template
+// TODO: require get_template_directory() . '/functions/page-template.php';
+
+// Activate Editor Functions
+// TODO: 
+require get_template_directory() . '/functions/editor-functions.php';
+// Does not work yet, improve, see links inside
+
+// Load Dyna Customizer
+// TODO: require get_template_directory() . '/functions/dyna-customizer.php';
